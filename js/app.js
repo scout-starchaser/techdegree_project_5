@@ -47,7 +47,7 @@ const buildGallery = userList => {
 
 const buildModal = user => {
 
-    if( !user) {
+    if( !user ) {
         return;
     }
 
@@ -60,7 +60,7 @@ const buildModal = user => {
                 <p class="modal-text">${user.email}</p>
                 <p class="modal-text cap">${user.location.city}</p>
                 <hr>
-                <p class="modal-text">${user.phone}</p>
+                <p class="modal-text">Phone: ${user.phone}</p>
                 <p class="modal-text">${user.location.street.number},\
                  ${user.location.street.name} \
                  ${user.location.city}, ${user.location.state} \
@@ -87,7 +87,6 @@ const init = () => {
     fetchUsers(numUsers)
     .then(userList => buildGallery(userList));
 
-    
     document.querySelector('#gallery')
             .addEventListener('click', event => {
             let user = event.target.parentNode.parentNode.user 
